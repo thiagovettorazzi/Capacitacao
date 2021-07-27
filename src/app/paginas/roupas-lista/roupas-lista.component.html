@@ -1,0 +1,31 @@
+<section class="conteudo-wrap-1280">
+    <h1 class="h1">Lista de roupas</h1>
+
+    <div class="form">
+        <div class="form-div">
+            <label class="form-label">Cor</label>
+            <label class="form-checkbox" *ngFor="let cor of cores">
+                <input type="checkbox" value="{{ cor.hexa }}" name="cor" class="form-checkbox-icon" (change)="onChangeCor($event)">
+                <span class="form-checkbox-texto" style="color: {{ cor.hexa }}"> {{ cor.nome }} </span>
+            </label>
+            <div class="clear-both"></div>
+        </div>
+        <div class="form-div">
+            <label class="form-label">Preço mínimo</label>
+            <input type="text" name="precoMinimo" placeholder="Preço mínimo" class="form-input" [formControl]="precoMinimo">
+        </div>
+        <div class="form-div">
+            <label class="form-label">Preço máximo</label>
+            <input type="text" name="precoMaximo" placeholder="Preço máximo" class="form-input" [formControl]="precoMaximo">
+        </div>
+        <div class="form-div">
+            <button type="button" class="form-button" (click)="filtrar()">Filtrar</button>
+        </div>
+        <div class="clear-both"></div>
+    </div>
+
+    <div class="roupas-container">
+        <roupa *ngFor="let roupa of listaExibicao" [roupa]="roupa"></roupa>
+        <div class="clear-both"></div>
+    </div>
+</section>

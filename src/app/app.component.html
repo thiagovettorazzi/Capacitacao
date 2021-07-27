@@ -1,3 +1,11 @@
-<h1 class="h1">Loja de roupas</h1>
+<header class="header">
+    <a routerLink="/lista" title="Lista de roupas" class="header-a">Lista de roupas</a>
+    <a routerLink="/carrinho" title="Carrinho" class="header-a">
+        Carrinho
+        <span class="header-a-qtd" *ngIf="carrinhoQtd > 0">{{ carrinhoQtd }}</span>
+    </a>
+</header>
 
-<roupas-lista></roupas-lista>
+<main class="conteudo">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+</main>

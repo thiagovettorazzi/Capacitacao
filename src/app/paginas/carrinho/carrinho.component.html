@@ -1,0 +1,25 @@
+<section class="conteudo-wrap-960">
+    <h1 class="h1">Carrinho de compras</h1>
+    
+    <div class="" *ngIf="carrinhoRoupas.length">
+        <div class="carrinho-item" *ngFor="let item of carrinhoRoupas">
+            <figure class="carrinho-imagem">
+                <img src="{{ item.roupa.imagem }}" alt="{{ item.roupa.nome }}">
+            </figure>
+
+            <div class="carrinho-infos">
+                <p class="carrinho-infos-nome">{{ item.roupa.nome }}</p>
+                <p class="carrinho-infos-preco">R$ {{ item.roupa.preco * item.qtd }},00</p>
+                <p class="carrinho-infos-cor">Cor: <span class="carrinho-infos-cor-icon" style="background:{{ item.roupa.cor.hexa }};"></span></p>
+            </div>
+
+            <button type="button" class="carrinho-excluir" (click)="remover(item.roupa)">Excluir</button>
+        </div>
+
+        <button type="button" class="carrinho-remover-tudo" (click)="removerTudo()">Remover tudo</button>
+    </div>
+    
+    <div class="carrinho-vazio" *ngIf="!carrinhoRoupas.length">
+        Carrinho de compras está vazio!
+    </div>
+</section>

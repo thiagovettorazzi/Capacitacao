@@ -1,7 +1,12 @@
 <div class="roupa">
-    <div class="roupa-content">
+    <a routerLink="/roupa/{{ roupa.id }}" title="{{ roupa.nome }}" class="roupa-content">
+        <figure class="roupa-imagem">
+            <img src="{{ roupa.imagem }}" alt="{{ roupa.nome }}">
+        </figure>
+
+        <p class="roupa-info roupa-info-titulo">{{ roupa.nome }}</p>
         <p class="roupa-info" style="color: {{ roupa.cor.hexa }}">Cor: <span class="roupa-cor" style="background: {{ roupa.cor.hexa }};"></span></p>
         <p class="roupa-info">Tamanho: {{ roupa.tamanho }}</p>
         <p class="roupa-info">Preço: R$ {{ roupa.preco }},00</p>
-    </div>
+    </a>
 </div>

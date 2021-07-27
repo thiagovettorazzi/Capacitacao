@@ -1,0 +1,19 @@
+<section class="conteudo-wrap-960">
+    <div class="rd">
+        <div class="rd-section">
+            <figure class="rd-figure">
+                <img src="{{ roupa.imagem }}" alt="{{ roupa.nome }}">
+            </figure>
+        </div>
+        
+        <div class="rd-section">
+            <h1 class="h1">{{ roupa.nome }}</h1>
+            <div class="rd-preco">R$ {{ roupa.preco }},00</div>
+            <p class="rd-cor">Cor: <span class="rd-cor-icon" style="background: {{ roupa.cor.hexa }};"></span></p>
+            <p class="rd-cor">Estoque: {{ roupa.estoque }}</p>
+            
+            <button type="button" class="rd-comprar" *ngIf="roupa.estoque > 0" (click)="onClickComprar()">Adicionar ao carrinho</button>
+            <button type="button" class="rd-comprar rd-comprar-sem-estoque" *ngIf="roupa.estoque <= 0">Sem estoque</button>
+        </div>
+    </div>
+</section>

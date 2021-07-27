@@ -1,0 +1,12 @@
+.roupa { width:calc(25% - 16px); padding:8px; float:left; }
+.roupa-content { padding:24px; display:block; color:rgba(0,0,0,.56); font-size:14px; line-height:120%; text-decoration:none; background:#ffffff; border-radius:8px; box-shadow:0 2px 6px 0px rgba(0,0,0,.24); transition:box-shadow .25s; }
+.roupa-content:hover { box-shadow:0 4px 8px 0px rgba(0,0,0,.36); }
+
+.roupa-imagem { width:100%; height:0; padding-bottom:100%; margin:0 0 16px; overflow:hidden; position:relative; border-radius:8px; }
+.roupa-imagem img { width:100%; height:100%; position:absolute; top:0; left:0; object-fit:cover; transition:transform .25s; }
+.roupa-imagem:hover img { transform:scale(1.05); }
+
+.roupa-info { margin:0; }
+.roupa-info + .roupa-info { margin-top:8px; }
+.roupa-info-titulo { color:rgba(0,0,0,.87); font-size:16px; font-weight:bold; line-height:120%; }
+.roupa-cor { width:12px; height:12px; display:inline-block; vertical-align:middle; border-radius:4px; }
